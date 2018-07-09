@@ -1,0 +1,49 @@
+---
+title: "popularidade-javaXpython"
+author: "laybson"
+date: "9 de julho de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(here)
+library(cluster)
+library(plotly)
+library(ggdendro)
+
+infoLanguages = read_csv(here("data/github-users-committing-filetypes.csv"))
+
+paleta = c("#404E4D",
+           "#92DCE5",
+           "#938BA1",
+           "#2D3142",
+           "#F4743B")
+```
+
+## Comprativo de popularidade: Java x Python
+
+Com base em uma amostragem de dados advindos do github, mostraremos algumas informações acerca à quantidade de uso das Linguagens Java e Python.
+As colunas desses dados referem-se à quantidade de usuários que pusharam arquivos de uma determinada extensão em um determinado dia entre 2016 e 2017.
+
+Considerando totais de uso, temos:
+
+```{r}
+infoLanguages %>%
+  group_by(file_extension) %>% 
+  summarise(total_users = sum(users)) %>% 
+  ggplot(aes(x = file_extension, y = total_users)) + 
+  geom_col() +
+  labs(x = "Linguagem", y = "Quantidade de Usuários")
+```
+

@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1531145933647.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DF384B2E",
+    "lastKnownWriteTime" : 8029407293893402880,
+    "last_content_update" : 1531145933647,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "F12E8787",
+        "caption" : "infoLanguages",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=infoLanguages&cache_key=F12E8787",
+        "displayedObservations" : 13802,
+        "environment" : "",
+        "object" : "infoLanguages",
+        "preview" : 0,
+        "totalObservations" : 13802,
+        "variables" : 5
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"popularidade-javaXpython\"\nauthor: \"laybson\"\ndate: \"9 de julho de 2018\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## R Markdown\n\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.\n\nWhen you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\n\n```{r echo=FALSE, message=FALSE, warning=FALSE}\nlibrary(tidyverse)\nlibrary(here)\nlibrary(cluster)\nlibrary(plotly)\nlibrary(ggdendro)\n\ninfoLanguages = read_csv(here(\"data/github-users-committing-filetypes.csv\"))\n\npaleta = c(\"#404E4D\",\n           \"#92DCE5\",\n           \"#938BA1\",\n           \"#2D3142\",\n           \"#F4743B\")\n```\n\n## Comprativo de popularidade: Java x Python\n\nCom base em uma amostragem de dados advindos do github, mostraremos algumas informações acerca à quantidade de uso das Linguagens Java e Python.\nAs colunas desses dados referem-se à quantidade de usuários que pusharam arquivos de uma determinada extensão em um determinado dia entre 2016 e 2017.\n\nConsiderando totais de uso, temos:\n\n```{r}\ninfoLanguages %>%\n  group_by(file_extension) %>% \n  summarise(total_users = sum(users)) %>% \n  ggplot(aes(x = file_extension, y = total_users)) + \n  geom_col() +\n  labs(x = \"Linguagem\", y = \"Quantidade de Usuários\")\n```\n\n",
+    "created" : 1531144881206.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "579261228",
+    "id" : "98A4B64D",
+    "lastKnownWriteTime" : 1531146995,
+    "last_content_update" : 1531146995802,
+    "path" : "~/ad1/prob4/popularidade-javaXpython.Rmd",
+    "project_path" : "popularidade-javaXpython.Rmd",
+    "properties" : {
+        "last_setup_crc32" : "887A562bb338d19",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

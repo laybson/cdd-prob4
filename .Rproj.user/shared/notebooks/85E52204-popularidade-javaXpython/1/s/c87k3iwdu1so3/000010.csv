@@ -1,0 +1,6 @@
+"0","infoLanguages %>%"
+"0","  group_by(file_extension) %>% "
+"0","  summarise(total_users = sum(users)) %>% "
+"0","  ggplot(aes(x = file_extension, y = total_users)) + "
+"0","  geom_col() +"
+"0","  labs(x = ""Linguagem"", y = ""Quantidade de Usuários"")"
